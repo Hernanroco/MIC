@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAMA CALCULAR IMC</h1>   
+    <script>
+
+        function saltarLinea () {
+            document.write("<br>")
+            document.write("<br>")
+        };
+
+        function print(stg){
+            document.write(stg);
+            saltarLinea();
+        }
+
+        function calcularImc(peso, altura){
+            return(
+                (peso / Math.pow(altura, 2))
+            );
+        };
+
+        let nombre = prompt("Informe su nombre")
+        let peso = prompt("Informe su peso");
+        let altura = prompt("Informe su altura");
+        let imcCalculado = calcularImc(peso, altura);
+
+        print("El indice de masa corporal de " + nombre + " es: " + imcCalculado);
+        
+
+        if (imcCalculado < 18.5) {
+            print("Insufuciencia ponderal, abajo de lo recomendado");
+        }
+
+        if (imcCalculado >= 18.5 && imcCalculado <= 24.9 ){
+                print("Intervalo normal, se encuentra regulado");
+        }
+
+        if (imcCalculado >= 25 && imcCalculado <= 29.9){
+            print("Sobrepeso");
+        }
+        
+        if (imcCalculado >= 30 && imcCalculado <= 39.9 ){
+               print("Obesidad");
+        }
+
+        if (imcCalculado >= 40 ){
+               print("Obesidad tipo lll");
+        }
+
+
+    </script> 
+</body>
+</html>
